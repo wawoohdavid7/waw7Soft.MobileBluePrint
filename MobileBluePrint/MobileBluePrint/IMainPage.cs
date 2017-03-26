@@ -8,5 +8,6 @@ namespace MobileBluePrint
 {
     public interface IMainPage
     {
+        //TEst
     }
 }
