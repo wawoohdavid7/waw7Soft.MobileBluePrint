@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Page2"
+             xmlns:contentViews="clr-namespace:MobileBluePrint.Core.ContentViews;assembly=MobileBluePrint.Core"
+             xmlns:cc="clr-namespace:MobileBluePrint.CustomControls;assembly=MobileBluePrint"
+             x:Class="MobileBluePrint.Views.Page2">
+  <StackLayout Orientation="Vertical">
+    <contentViews:SingleSelectDropdown SelectionArguments="{Binding CountryListPageArguments}"  />
+    <Button Text="Test" Command="{Binding TestCommand}" />
+        <!--<cc:CustomPicker />-->
+
+    
+    
+    
+    <!--<Button Text="Go Profile" Command="{Binding GoProfilePageCommand}" />
+    <Label Text="{Binding Test}" />-->
+    
+  </StackLayout>
+</ContentPage>

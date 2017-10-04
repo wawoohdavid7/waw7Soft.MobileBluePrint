@@ -1,4 +1,5 @@
-﻿using MobileBluePrint.ViewModels;
+﻿using MobileBluePrint.CustomControls;
+using MobileBluePrint.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,8 @@ using Xamarin.Forms;
 
 namespace MobileBluePrint
 {
-    public partial class MainPage : ContentPage
+    //TODO: transfer to core?
+    public partial class MainPage : CustomMasterDetail
     {
         public MainPage()
         {

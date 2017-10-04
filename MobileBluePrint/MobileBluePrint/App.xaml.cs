@@ -1,6 +1,10 @@
 ﻿using Autofac;
 using MobileBluePrint.Constants;
+using MobileBluePrint.Core.Interfaces;
+using MobileBluePrint.Core.Services;
+using MobileBluePrint.Objects;
 using MobileBluePrint.ViewModels;
+using MobileBluePrint.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +16,17 @@ namespace MobileBluePrint
 {
     public partial class App : Application
     {
-        public App(IVersionNumber versionNumber, ILifetimeScope appContainer, IMainPageViewModel vm)
+        public App(IPageResolver pageResolver, IMasterPageService masterPageService)
         {
             InitializeComponent();
 
-            string tmp = versionNumber.GetVersionNumber();
 
-            var view = appContainer.ResolveNamed<Page>(ViewNames.Main);
-            view.BindingContext = vm;
-            MainPage = view;
-            //MainPage.BindingContext = mainVM;
+            var mainpage = pageResolver.ResolvePage(ViewNames.Main);
+            masterPageService.InitializeMasterDetailPage((MasterDetailPage)mainpage);
 
-            
+
+            MainPage = mainpage;
+
         }
 
         protected override void OnStart()

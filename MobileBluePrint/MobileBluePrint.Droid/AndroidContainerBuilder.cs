@@ -10,14 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Autofac;
+using MobileBluePrint.Core.Interfaces;
+
 namespace MobileBluePrint.Droid
 {
-    class AndroidContainerBuilder : IPlatformContainerBuilder
+    public class AndroidContainerBuilder : IPlatformContainerBuilder
     {
-        public ContainerBuilder RegisterPlatformComponents()
+        public ContainerBuilder RegisterPlatformServiceComponents()
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<Android_VersionNumber>().As<IVersionNumber>().SingleInstance();
+            builder.RegisterType<AndroidDeviceInfo>().As<IDeviceInfo>().SingleInstance();
 
             return builder;
         }

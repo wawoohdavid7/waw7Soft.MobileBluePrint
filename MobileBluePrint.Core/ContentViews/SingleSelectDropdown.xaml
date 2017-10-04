@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#f5f5f5"
+             x:Name="this"
+             x:Class="MobileBluePrint.Core.ContentViews.SingleSelectDropdown">
+  <ContentView.GestureRecognizers>
+    <TapGestureRecognizer Tapped="OnTapped" NumberOfTapsRequired="1"/>
+  </ContentView.GestureRecognizers>
+  <Grid InputTransparent="True">
+    <Grid.RowDefinitions>
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+
+    <Entry Text="SELECT" IsEnabled="False" 
+           Grid.Row="0" Grid.Column="0" InputTransparent="True" />
+    <Image Source="ic_arrow_down"
+           Grid.Row="0" Grid.Column="1"/>
+  </Grid>
+</ContentView>

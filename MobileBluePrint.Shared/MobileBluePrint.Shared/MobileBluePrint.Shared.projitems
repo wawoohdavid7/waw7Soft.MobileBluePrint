@@ -10,6 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AppModule.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)AutofacContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AppModuleService.cs" />
   </ItemGroup>
 </Project>
